@@ -10,5 +10,9 @@ with st.form("my Form"):
     with col2:
         pet = st.text_input("What is the name of a pet?")
     submitted = st.form_submit_button("Submit")
-    if submitted:
-        st.write("Your band name could be " + name + " " + pet)
+if submitted:
+    if name and pet:
+        band_name = f"{name} {pet}"
+        st.write(f"Your band name could be: {band_name}")
+    else:
+        st.warning("Please fill in both the city and pet name to generate a band name.")
